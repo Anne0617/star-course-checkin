@@ -1,4 +1,4 @@
-﻿/** ===== 星途大冒险 · 核心游戏引擎 v2 ===== */
+/** ===== 星途大冒险 · 核心游戏引擎 v2 ===== */
 
 const APP = { userName: "", userDept: "", userPhone: "", currentPage: "home", currentDay: null, currentTab: "knowledge", answers: {}, answered: false, hp: 5, maxHp: 5, logoTaps: 0 };
 
@@ -258,26 +258,7 @@ function switchTab(t) {
   document.querySelectorAll(".tab-content").forEach(el => el.classList.toggle("active", el.id === "tab-" + t));
 }
 
-// ====== 上报进度 ======
-function showExport() {
-  const u = DB.getUser();
-  if (!u.name) { showNameModal(); return; }
-  const days = DAYS_DATA;
-  let dayData = {};
-  days.forEach(d => { const dd = DB.getDay(d.day); if (dd.done && dd.data) dayData["d" + d.day] = dd.data.score; });
-  const total = Object.values(dayData).reduce((s, v) => s + v, 0);
-  const data = { name: u.name, dept: u.dept, phone: u.phone, days: dayData, total };
-  document.getElementById("export-text").value = JSON.stringify(data, null, 2);
-  document.getElementById("export-modal").classList.add("show");
-}
 
-function copyExport() {
-  const ta = document.getElementById("export-text");
-  ta.select(); document.execCommand("copy");
-  const btn = document.getElementById("copy-btn");
-  btn.textContent = "✅ 已复制！"; setTimeout(() => { btn.textContent = "📋 复制数据"; }, 2000);
-  showToast("数据已复制，请发送给管理人员");
-}
 
 // ====== 荣誉榜 ======
 function renderLeaderboard() {

@@ -51,17 +51,6 @@
     </div>
   </div>
 
-  <!-- ===== 导出上报弹窗 ===== -->
-  <div class="modal-overlay" id="export-modal">
-    <div class="modal" style="text-align:left">
-      <h3 style="text-align:center">📤 上报进度</h3>
-      <p style="text-align:center;font-size:12px">将以下数据复制发送给管理人员</p>
-      <textarea class="modal-input" id="export-text" rows="6" readonly style="font-size:11px;font-family:monospace;resize:none"></textarea>
-      <button class="btn btn-gold modal-btn" onclick="copyExport()" id="copy-btn">📋 复制数据</button>
-      <button class="btn btn-ghost modal-btn" style="margin-top:8px" onclick="closeModal('export-modal')">关闭</button>
-    </div>
-  </div>
-
   <!-- ===== 后台管理弹窗（管理员） ===== -->
   <div class="modal-overlay" id="admin-modal">
     <div class="modal" style="text-align:left;max-width:420px">
@@ -84,15 +73,7 @@
         </div>
       </div>
 
-      <!-- 导入区 -->
-      <div style="border:1px dashed rgba(212,168,67,0.2);border-radius:8px;padding:10px;margin-bottom:10px">
-        <div style="font-size:11px;font-weight:600;margin-bottom:6px">📥 导入人员数据</div>
-        <textarea class="modal-input" id="import-text" rows="3" placeholder="粘贴成员上报的数据..." style="font-size:10px;font-family:monospace;margin-bottom:6px"></textarea>
-        <div style="display:flex;gap:6px">
-          <button class="btn btn-gold" style="flex:1;padding:8px;font-size:11px" onclick="importData()">📥 导入</button>
-          <button class="btn btn-success" style="flex:1;padding:8px;font-size:11px" onclick="exportCSV()">📤 导出CSV</button>
-        </div>
-      </div>
+
 
       <!-- 成员列表 -->
       <div id="admin-list" style="max-height:200px;overflow-y:auto;font-size:11px">
@@ -190,7 +171,7 @@
           <div class="section-title" style="font-size:17px">🏆 智善精英榜</div>
           <div class="section-subtitle" style="font-size:10px;margin-bottom:0">星河流转 · 智善争先</div>
         </div>
-        <button class="btn btn-gold" style="padding:7px 14px;font-size:11px" onclick="showExport()">📤 上报进度</button>
+
       </div>
       <div style="font-size:9px;color:var(--text-muted);margin-bottom:10px">排名基于完成任务数量和积分 · 每日更新</div>
       <div id="rank-list"></div>
