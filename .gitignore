@@ -1,0 +1,6 @@
+﻿*.py
+__pycache__/
+.DS_Store
+Thumbs.db
+星学堂集成/
+*_底稿汇报.md
