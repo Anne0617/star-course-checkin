@@ -1,0 +1,9 @@
+services:
+- type: web
+  name: star-course-api
+  runtime: python
+  buildCommand: pip install -r requirements.txt
+  startCommand: gunicorn nebula.wsgi:application
+  envVars:
+  - key: PYTHON_VERSION
+    value: 3.12
